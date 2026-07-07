@@ -1,7 +1,7 @@
 document.querySelector("#getUshauri")
      .addEventListener("click", () => {
 
-fetch(`http://localhost:3000/api/ushauri`)
+fetch(`https://ushauriwebsystem.onrender.com`)
     .then(response => response.json())
     .then(data => {
     
