@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="sw">
+     <meta charset="UTF-8">
+<head>
+    <title>Pegi ya ushauri</title>
+    <style>
+     body{
+            font-family: Arial, sans-serif;
+            text-align:center;
+            margin-top:50px;
+            background-color:grey;
+            color:darkred;
+        }
+
+        #ushauriBox{
+            width:60%;
+            margin:20px auto;
+            padding:20px;
+            border:1px solid #ccc;
+            border-radius:10px;
+            background-color:black;
+        }
+         #ushauri{
+            color:red;
+        }
+         #ushauriId{
+            color:lime;
+        } 
+        button{
+            padding:10px 20px;
+            cursor:pointer;
+        }
+        button:hover{
+            background-color:brown;
+            color:lime;
+        }
+    </style>    
+</head>
+
+<body>
+
+        <h1>jenereta ya ushauri</h1>
+        <button id="getUshauri">Pata Ushauri</button>
+        <div id="ushauriBox">
+            <p id="ushauri">Bonyeza batani kupata ushauri</p>
+            <p id="ushauriId"></p>
+        </div>
+        <script src="ushauri.js"></script>
+
+</html>
