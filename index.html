@@ -1,40 +1,87 @@
 <!DOCTYPE html>
 <html lang="sw">
-     <meta charset="UTF-8">
 <head>
-    <title>Pegi ya ushauri</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pegi ya Ushauri - Karibu</title>
     <style>
-     body{
-            font-family: Arial, sans-serif;
-            text-align:center;
-            margin-top:50px;
-            background-color:grey;
-            color:darkred;
+        /* 1. Mfumo wa Ukurasa Mzima - Unafanana na ushauri.html */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298); /* Rangi ile ile ya bluu ya kisasa */
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
         }
-        #ushauri{
-            color:red;
+
+        /* 2. Sanduku Kuu la Utangulizi (Glassmorphism Effect) */
+        #ushauriBox {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
-      #ushauriBox{
-            border:1px solid black;
-            border-radius:5px;
-            width:60%;
-            margin:20px auto;
-            padding:10px;
-            background-color:black;
-      }  
-      button{
-      padding:10px 20px;
-      cursor:pointer;
-      }  
-        
+
+        /* 3. Kichwa cha Habari */
+        h1 {
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 4. Maandishi ya Maelezo */
+        p {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        /* 5. REMBO LA BATANI (Hapa ndio uchawi ulipo!) */
+        .btn-link {
+            display: inline-block; /* Inafanya link ifanye kazi kama sanduku/batani */
+            padding: 14px 30px; /* Unene wa ndani ya batani */
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none; /* INAFUTA ule mstari wa chini uliopo kwenye link za kawaida */
+            background: linear-gradient(to right, #00c6ff, #0072ff); /* Rangi ya kung'aa */
+            color: white !important; /* Inalazimisha maandishi yawe meupe badala ya bluu ya link za kawaida */
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        /* Panya ikigusa batani */
+        .btn-link:hover {
+            transform: translateY(-3px); /* Inanyanyuka juu kidogo */
+            box-shadow: 0 6px 20px rgba(0, 114, 255, 0.6);
+        }
+
+        /* Ikibonyezwa */
+        .btn-link:active {
+            transform: translateY(1px);
+        }
     </style>    
 </head>
 
- <body>
+<body>
        <div id="ushauriBox">
-        <h1>jenereta ya ushauri</h1>
-            <p>Bonyeza linki chini hapo kufungua page ya ushauri</p>
-        <button><a href="ushauri.html">bonyeza hapa</a></button>
-        </div>
- </body>
+            <h1>jenereta ya ushauri</h1>
+            <p>Karibu kwenye mfumo wa ushauri wa kidijitali. Bonyeza batani hapo chini ili kufungua ukurasa wa kupata ushauri wa maisha, fedha, kodi, na mengine mengi.</p>
+            
+            <a href="ushauri.html" class="btn-link">Bonyeza Hapa Kuingia</a>
+       </div>
+</body>
 </html>
