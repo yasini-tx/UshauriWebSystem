@@ -107,6 +107,40 @@
             letter-spacing: 1px;
             margin: 0;
         }
+        
+        /* --- IPANGILIE SIMU (Vioo vyenye upana chini ya pixel 600) --- */
+@media (max-width: 600px) {
+    /* 1. Shusha ukubwa wa kichwa cha habari ili kisijae sana */
+    h1 {
+        font-size: 1.8rem; 
+        margin-bottom: 20px;
+    }
+
+    /* 2. Panga dropdown na batani ziende chini badala ya kukaa pembeni */
+    .controls-container {
+        flex-direction: column; /* Inageuza kutoka kushoto-kulia kwenda juu-chini */
+        width: 90%; /* Inachukua upana mkubwa wa kioo cha simu */
+        gap: 10px; /* Inapunguza uwazi kati yao */
+    }
+
+    /* 3. Dropdown na batani zichukue upana mzima wa eneo lao kwenye simu */
+    select, button {
+        width: 100%;
+        font-size: 0.95rem; /* Inapunguza herufi kidogo ili zikae vizuri */
+        padding: 14px; /* Inanenepesha kidogo ili iwe rahisi mtumiaji kugusa kwa kidole */
+    }
+
+    /* 4. Rekebisha sanduku la ushauri lisibane sana kwenye simu */
+    #ushauriBox {
+        padding: 25px 15px; /* Inapunguza nafasi za ndani (padding) ili ushauri upate nafasi kubwa */
+        width: 90%;
+    }
+
+    /* 5. Punguza ukubwa wa maandishi ya ushauri yasiumize macho */
+    #ushauri {
+        font-size: 1.1rem;
+    }
+}
     </style>
 </head>
 <body>
