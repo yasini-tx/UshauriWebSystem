@@ -6,6 +6,9 @@ const PORT = process.env.PORT || 3000;// API yetu itakimbia kwenye port 3000
 // Ruhusu frontend yoyote isomane na hii server
 app.use(cors());
 
+// Ruhusu mawasiliano
+app.use(express.json());
+
 // Data zetu za ushauri wa Kiswahili (Hii ndio Database yetu ndogo)
 const ushauriData = [
     { id: 1, ushauri: "Jifunze kodi kila siku, hata kwa nusu saa tu." },
