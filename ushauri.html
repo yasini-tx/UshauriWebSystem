@@ -4,59 +4,138 @@
 <head>
     <title>Pegi ya ushauri</title>
     <style>
-     body{
-            font-family: Arial, sans-serif;
-            text-align:center;
-            margin-top:50px;
-            background-color:grey;
-            color:darkred;
-        }
+    <style>
+    /* 1. Mipangilio ya Ukurasa Mzima (Body) */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font ya kisasa na safi isiyo na mikia */
+        background: linear-gradient(135deg, #1e3c72, #2a5298); /* Background ya kuvutia inayochanganya rangi mbili za bluu */
+        color: #ffffff; /* Rangi ya maandishi makuu yawe meupe */
+        display: flex; /* Mfumo wa kupanga vitu kwa urahisi */
+        flex-direction: column; /* Panga vitu viende chini (vielekee wima) */
+        align-items: center; /* Weka vitu vyote katikati ya screen kwa upande wa kushoto/kulia */
+        justify-content: center; /* Weka vitu katikati kwa upande wa juu/chini */
+        min-height: 100vh; /* Kimo cha ukurasa kichukue screen nzima ya kifaa */
+        margin: 0; /* Ondoa nafasi za ziada pembezoni mwa ukurasa */
+    }
 
-        #ushauriBox{
-            width:60%;
-            margin:20px auto;
-            padding:20px;
-            border:1px solid #ccc;
-            border-radius:10px;
-            background-color:black;
-        }
-         #ushauri{
-            color:red;
-        }
-         #ushauriId{
-            color:lime;
-        } 
-        button{
-            padding:10px 20px;
-            cursor:pointer;
-        }
-        button:hover{
-            background-color:brown;
-            color:lime;
-        }
+    /* 2. Kichwa cha Habari (H1) */
+    h1 {
+        font-size: 2.5rem; /* Ukubwa wa herufi uwe mkubwa na wa kutosha */
+        text-transform: uppercase; /* Badilisha herufi zote kuwa herufi kubwa (KAPITALO) */
+        letter-spacing: 2px; /* Weka nafasi kidogo kati ya herufi na herufi */
+        margin-bottom: 30px; /* Sukuma vitu vya chini vikae mbali kidogo na kichwa cha habari */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Weka kivuli laini cha giza nyuma ya maandishi ili yavutie */
+    }
+
+    /* 3. Eneo la Mipangilio (Dropdown na Batani) */
+    .controls-container {
+        display: flex; /* Panga dropdown na batani pembeni ya kila mmoja */
+        gap: 15px; /* Weka nafasi (uwazi) wa pixel 15 kati ya dropdown na batani */
+        margin-bottom: 30px; /* Sukuma sanduku la ushauri la chini likae mbali */
+    }
+
+    /* 4. Mrembo wa Dropdown Menu (Select) */
+    select {
+        padding: 12px 20px; /* Weka unene wa nafasi ya ndani (juu/chini na kushoto/kulia) */
+        font-size: 1rem; /* Ukubwa wa maandishi ya ndani */
+        border: 2px solid rgba(255, 255, 255, 0.2); /* Mstari wa pembeni uwe mweupe uliofifia kidogo */
+        border-radius: 8px; /* Curve pembezoni mwa kona za dropdown ili zisiwe na ncha kali */
+        background-color: rgba(255, 255, 255, 0.1); /* Background iwe nyeupe iliyofifia (Glassmorphism effect) */
+        color: white; /* Maandishi yatakayochaguliwa yawe meupe */
+        outline: none; /* Ondoa ule mstari unaotokea ukibonyeza dropdown */
+        cursor: pointer; /* Mshale wa panya ubadilike kuwa mkono ukielekezwa hapa */
+        transition: all 0.3s ease; /* Mabadiliko yoyote yatokee kwa ulaini (sekunde 0.3) */
+    }
+
+    /* Inatokea nini mtumiaji akibonyeza kuselect */
+    select:focus {
+        border-color: #4facfe; /* Mstari wa pembeni ubadilike kuwa wa bluu angavu */
+        background-color: #1e3c72; /* Maandishi ya ndani yakiwa kwenye menu yasomeke vizuri */
+    }
+
+    /* 5. Mrembo wa Batani (Button) */
+    button {
+        padding: 12px 25px; /* Unene wa batani kwa ndani */
+        font-size: 1rem;
+        font-weight: bold; /* Maandishi yawe mazito */
+        background: linear-gradient(to right, #00c6ff, #0072ff); /* Batani iwe na mchanganyiko wa rangi mbili za bluu */
+        color: white; /* Maandishi ya batani yawe meupe */
+        border: none; /* Ondoa mstari wa pembeni kabisa */
+        border-radius: 8px; /* Curve kona za batani */
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4); /* Weka kivuli cha bluu chini ya batani ili ionekane imenyanyuka */
+        transition: all 0.3s ease; /* Mabadiliko yawe ya ulaini */
+    }
+
+    /* Inatokea nini panya (cursor) ikigusa batani */
+    button:hover {
+        transform: translateY(-2px); /* Sukuma batani juu kidogo kwa pixel 2 ionekane kama inajibu */
+        box-shadow: 0 6px 20px rgba(0, 114, 255, 0.6); /* Ongeza nguvu ya kivuli wakati wa kugusa */
+    }
+
+    /* Inatokea nini mtumiaji akikandamiza batani */
+    button:active {
+        transform: translateY(1px); /* Shusha batani chini kidogo ionekane imebonyezeka */
+    }
+
+    /* 6. Sanduku Kuu la Kuonyesha Ushauri (ushauriBox) */
+    #ushauriBox {
+        background: rgba(255, 255, 255, 0.1); /* Background nyeupe iliyofifia sana kama kioo */
+        backdrop-filter: blur(10px); /* Weka ukungu nyuma ya kioo hiki ili maandishi yasomeke kwa urahisi */
+        border: 1px solid rgba(255, 255, 255, 0.2); /* Mstari laini sana wa kioo pembeni */
+        padding: 40px; /* Nafasi kubwa ya ndani ili ushauri upumue */
+        border-radius: 16px; /* Kona ziwe na curve kubwa na ya kisasa */
+        max-width: 600px; /* Upana wa mwisho kabisa wa sanduku ili lisitandalike sana kwenye PC kubwa */
+        width: 90%; /* Kwenye simu ndogo, chukua asilimia 90 ya upana wa screen */
+        text-align: center; /* Weka maandishi yote ya ushauri katikati ya sanduku */
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Kivuli kikubwa cha giza ili sanduku litokeze kwa mbele */
+    }
+
+    /* 7. Maandishi ya Ushauri Wenyewe */
+    #ushauri {
+        font-size: 1.3rem; /* Ukubwa wa maandishi uongezeke yawe ya kuvutia kusoma */
+        line-height: 1.6; /* Weka nafasi kati ya mstari wa juu na wa chini ushauri ukiwa mrefu */
+        color: #ffffff; /* Rangi ya ushauri iwe nyeupe safi badala ya nyekundu ya mwanzo */
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+
+    /* 8. Maandishi ya ID na Category ya Ushauri */
+    #ushauriId {
+        font-size: 0.9rem;
+        color: #00ffcc; /* Rangi ya kijani ya neon/kichawi inayong'aa ili itofautiane na ushauri wenyewe */
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+</style>
     </style>    
 </head>
 
 <body>
-<h1>jenereta ya ushauri</h1>
 
-<select id="categorySelect">
-    <option value="">-- Chagua Aina ya Ushauri (Zote) --</option>
-    <option value="programming">Programming</option>
-    <option value="elimu">Elimu</option>
-    <option value="maisha">Maisha</option>
-    <option value="motivation">Motivation</option>
-    <option value="fedha">Fedha</option>
-    <option value="mahusiano">Mahusiano</option>
-</select>
+    <h1>jenereta ya ushauri</h1>
 
-<button id="getUshauri">Pata Ushauri</button>
+    <!-- Tumeziweka pamoja ndani ya div hii ili CSS izipange vizuri -->
+    <div class="controls-container">
+        <select id="categorySelect">
+            <option value="">-- Chagua Aina ya Ushauri (Zote) --</option>
+            <option value="programming">Programming</option>
+            <option value="elimu">Elimu</option>
+            <option value="maisha">Maisha</option>
+            <option value="motivation">Motivation</option>
+            <option value="fedha">Fedha</option>
+            <option value="mahusiano">Mahusiano</option>
+        </select>
 
-<div id="ushauriBox">
-    <p id="ushauri">Bonyeza batani kupata ushauri</p>
-    <p id="ushauriId"></p>
-</div>
+        <button id="getUshauri">Pata Ushauri</button>
+    </div>
 
-<script src="ushauri.js"></script>
+    <div id="ushauriBox">
+        <p id="ushauri">Bonyeza batani kupata ushauri</p>
+        <p id="ushauriId"></p>
+    </div>
+
+    <script src="ushauri.js"></script>
+</body>
 </body>
 </html>
